@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.by_karma.limit(50)
+    @users = User.limit(1000).order("karma_sum DESC")
+    # render 'omg'
   end
 end
